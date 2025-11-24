@@ -4,11 +4,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Finova - The Offline Financial Validation Toolkit for .NET</title>
-  <meta name="description"
-    content="Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency. 100% Privacy." />
+  <meta name="title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
+  <meta name="description" content="Validate IBANs, Payment References, and Business Numbers locally in .NET. Zero dependencies. Zero latency. 100% Privacy. Supports Belgian, Dutch, and Luxembourg formats." />
+  <meta name="keywords" content=".NET, C#, IBAN validation, OGM, Payment Reference, Finova, Offline Validation, Nuget, Privacy, Belgium, Netherlands, Luxembourg" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Finova" />
+  <link rel="canonical" href="https://finovapackage.netlify.app/" />
 
-  <!-- Tailwind CSS -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://finovapackage.netlify.app/" />
+  <meta property="og:title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
+  <meta property="og:description" content="Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency. 100% Privacy." />
+  <meta property="og:image" content="https://finovapackage.netlify.app/assets/images/social-preview.jpg" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://finovapackage.netlify.app/" />
+  <meta property="twitter:title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
+  <meta property="twitter:description" content="Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency. 100% Privacy." />
+  <meta property="twitter:image" content="https://finovapackage.netlify.app/assets/images/social-preview.jpg" />
+
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="assets/images/site.webmanifest">
+  <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#06b6d4">
+  <meta name="msapplication-TileColor" content="#09090b">
+  <meta name="theme-color" content="#09090b">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Finova",
+    "operatingSystem": ".NET",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency."
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -36,16 +74,12 @@
     };
   </script>
 
-  <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Flag Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
 
-  <!-- Panzoom for diagram zoom/pan -->
   <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
 
   <style>
@@ -249,33 +283,29 @@
 </head>
 
 <body class="antialiased overflow-x-hidden relative">
-  <!-- Background Elements -->
   <div class="fixed inset-0 z-[-1] bg-grid pointer-events-none"></div>
   <div class="fixed inset-0 z-[-1] bg-glow pointer-events-none"></div>
 
-  <!-- Navigation -->
   <nav class="fixed w-full z-50 top-0 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md"
     x-data="{ mobileMenuOpen: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
         <div class="flex-shrink-0 flex items-center gap-2">
           <span class="text-xl font-bold text-white tracking-tight">Finova</span>
         </div>
 
-        <!-- Desktop Links -->
         <div class="hidden md:block">
           <div class="ml-10 flex items-center space-x-8">
             <a href="#features" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-              data-i18n="nav_features"></a>
+              data-i18n="nav_features">Features</a>
             <a href="#validations" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-              data-i18n="nav_validations"></a>
+              data-i18n="nav_validations">Validations</a>
             <a href="#roadmap" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-              data-i18n="nav_roadmap"></a>
+              data-i18n="nav_roadmap">Roadmap</a>
             <a href="https://github.com/fdivrusa/Finova" target="_blank"
-              class="text-sm font-medium text-zinc-400 hover:text-white transition-colors" data-i18n="nav_github"></a>
+              class="text-sm font-medium text-zinc-400 hover:text-white transition-colors" data-i18n="nav_github">GitHub</a>
 
-            <!-- Language Switcher (Desktop) -->
+            <label for="language-switcher" class="sr-only">Select Language</label>
             <select id="language-switcher"
               class="language-switcher bg-zinc-900 border border-zinc-700 text-zinc-300 text-sm rounded-md focus:ring-cyan-500 focus:border-cyan-500 block p-1.5">
               <option value="en">EN</option>
@@ -285,25 +315,24 @@
           </div>
         </div>
 
-        <!-- CTA -->
         <div class="hidden md:block">
           <a href="https://www.nuget.org/packages/Finova" target="_blank"
             class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/20"
             data-i18n="nav_get_package">
+            Get Package
           </a>
         </div>
 
-        <!-- Mobile menu button -->
         <div class="-mr-2 flex md:hidden items-center gap-4">
-          <!-- Mobile Language Switcher -->
-          <select
+          <label for="language-switcher-mobile" class="sr-only">Select Language</label>
+          <select id="language-switcher-mobile"
             class="language-switcher md:hidden bg-zinc-900 border border-zinc-700 text-zinc-300 text-sm rounded-md focus:ring-cyan-500 focus:border-cyan-500 block p-1.5">
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="nl">NL</option>
           </select>
 
-          <button @click="mobileMenuOpen = !mobileMenuOpen" type="button"
+          <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" aria-label="Open main menu"
             class="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-white hover:bg-white/5 focus:outline-none">
             <i data-lucide="menu" class="h-6 w-6" x-show="!mobileMenuOpen"></i>
             <i data-lucide="x" class="h-6 w-6" x-show="mobileMenuOpen" x-cloak></i>
@@ -312,32 +341,29 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div class="md:hidden border-b border-white/5 bg-zinc-950" x-show="mobileMenuOpen" x-transition x-cloak>
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <a href="#features"
           class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-white/5"
-          data-i18n="nav_features"></a>
+          data-i18n="nav_features">Features</a>
         <a href="#validations"
           class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-white/5"
-          data-i18n="nav_validations"></a>
+          data-i18n="nav_validations">Validations</a>
         <a href="#roadmap"
           class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-white/5"
-          data-i18n="nav_roadmap"></a>
+          data-i18n="nav_roadmap">Roadmap</a>
         <a href="https://github.com"
           class="block px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:text-white hover:bg-white/5"
-          data-i18n="nav_github"></a>
+          data-i18n="nav_github">GitHub</a>
         <a href="https://www.nuget.org/packages/Finova"
           class="block w-full text-center mt-4 px-4 py-3 rounded-md font-bold text-white bg-gradient-to-r from-cyan-600 to-blue-600"
-          data-i18n="nav_get_package"></a>
+          data-i18n="nav_get_package">Get Package</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <!-- Badges -->
       <div class="flex justify-center gap-3 mb-8 animate-fade-in-up">
         <span
           class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-zinc-300 border border-zinc-700"><span
@@ -350,30 +376,29 @@
             class="fi fi-lu" style="width: 16px; height: 12px; display: inline-block;"></span> LU</span>
         <span
           class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-900/30 text-cyan-400 border border-cyan-700/50 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
-          <i data-lucide="wifi-off" class="w-3 h-3 mr-1"></i> <span data-i18n="hero_offline_badge"></span>
+          <i data-lucide="wifi-off" class="w-3 h-3 mr-1"></i> <span data-i18n="hero_offline_badge">100% Offline</span>
         </span>
       </div>
 
       <h1
         class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-400"
         data-i18n="hero_title">
+        The Offline Financial Validation Toolkit for .NET
       </h1>
 
       <p class="mt-4 max-w-2xl mx-auto text-xl text-zinc-400 mb-10">
-        <span data-i18n="hero_subtitle_1"></span>
+        <span data-i18n="hero_subtitle_1">Validate IBANs, Payment References, and Business Numbers locally.</span>
         <br />
-        <span class="text-zinc-200" data-i18n="hero_subtitle_2"></span>
+        <span class="text-zinc-200" data-i18n="hero_subtitle_2">Zero dependencies. Zero latency. 100% Privacy.</span>
       </p>
 
-      <!-- Disclaimer -->
       <div class="max-w-3xl mx-auto mb-8">
         <p class="text-sm text-zinc-500 italic border-l-2 border-zinc-700 pl-4">
           <i data-lucide="info" class="w-4 h-4 inline-block mr-1"></i>
-          <span data-i18n="hero_disclaimer"></span>
+          <span data-i18n="hero_disclaimer">This library performs regex & checksum validation only. It does not verify existence with banks.</span>
         </p>
       </div>
 
-      <!-- Command Block -->
       <div class="flex justify-center mb-12" x-data="{ copied: false }">
         <button
           @click="navigator.clipboard.writeText('dotnet add package Finova'); copied = true; setTimeout(() => copied = false, 2000)"
@@ -382,36 +407,35 @@
           <span>dotnet add package Finova</span>
           <i data-lucide="copy" class="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors"></i>
 
-          <!-- Tooltip -->
           <div x-show="copied" x-transition:enter="transition ease-out duration-200"
             x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 translate-y-2"
             class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-cyan-600 text-white text-xs py-1 px-2 rounded shadow-lg"
             style="display: none" data-i18n="hero_copied">
+            Copied!
           </div>
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
   <section id="features" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Zero Dependencies -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate">
           <div
             class="w-12 h-12 rounded-lg bg-zinc-800/50 flex items-center justify-center mb-6 border border-zinc-700 group-hover:border-cyan-500/30 group-hover:bg-cyan-900/10">
             <i data-lucide="package-x" class="w-6 h-6 text-cyan-400"></i>
           </div>
           <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_zero_dep_title">
+            Zero Dependencies
           </h3>
           <p class="text-zinc-400 leading-relaxed" data-i18n="feature_zero_dep_desc">
+            Extremely lightweight. No external API calls, no bloat. Just pure, optimized C# logic for maximum performance.
           </p>
         </div>
 
-        <!-- Lightning Fast -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate"
           style="transition-delay: 0.1s">
           <div
@@ -419,36 +443,41 @@
             <i data-lucide="zap" class="w-6 h-6 text-cyan-400"></i>
           </div>
           <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_fast_title">
+            Lightning Fast
           </h3>
           <p class="text-zinc-400 leading-relaxed" data-i18n="feature_fast_desc">
+            Designed for high-throughput applications. Validates thousands of records in milliseconds with zero network latency.
           </p>
         </div>
 
-        <!-- Privacy First -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate"
           style="transition-delay: 0.2s">
           <div
             class="w-12 h-12 rounded-lg bg-zinc-800/50 flex items-center justify-center mb-6 border border-zinc-700 group-hover:border-cyan-500/30 group-hover:bg-cyan-900/10">
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400"></i>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_privacy_title"></h3>
+          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_privacy_title">
+            Privacy First
+          </h3>
           <p class="text-zinc-400 leading-relaxed" data-i18n="feature_privacy_desc">
+            Data never leaves your server. Perfect for GDPR compliance and secure financial environments where data leaks are not an option.
           </p>
         </div>
 
-        <!-- Benelux Focus -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate"
           style="transition-delay: 0.3s">
           <div
             class="w-12 h-12 rounded-lg bg-zinc-800/50 flex items-center justify-center mb-6 border border-zinc-700 group-hover:border-cyan-500/30 group-hover:bg-cyan-900/10">
             <i data-lucide="map-pin" class="w-6 h-6 text-cyan-400"></i>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_benelux_title"></h3>
+          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_benelux_title">
+            Benelux Specialized
+          </h3>
           <p class="text-zinc-400 leading-relaxed" data-i18n="feature_benelux_desc">
+            Specialized support for Belgium, Netherlands, and Luxembourg formats including specific banking standards (VCS, OGM).
           </p>
         </div>
 
-        <!-- Compliance -->
         <div
           class="glass-card p-8 rounded-2xl transition-all duration-300 group md:col-span-2 lg:col-span-2 scroll-animate"
           style="transition-delay: 0.4s">
@@ -457,19 +486,19 @@
             <i data-lucide="file-check" class="w-6 h-6 text-cyan-400"></i>
           </div>
           <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_iso_title">
+            Standard Compliant
           </h3>
           <p class="text-zinc-400 leading-relaxed" data-i18n="feature_iso_desc">
+            Implements official checksum algorithms (Mod97, ISO 7064) ensuring your data is technically valid before processing.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Code Demo Section -->
   <section class="py-20 bg-zinc-900/30 border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Code Window -->
         <div
           class="rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700 shadow-2xl shadow-black/50 scroll-animate-left">
           <div class="flex items-center px-4 py-3 bg-[#252526] border-b border-zinc-700">
@@ -490,9 +519,9 @@
           </div>
         </div>
 
-        <!-- Benefits List -->
         <div class="scroll-animate-right">
           <h2 class="text-3xl font-bold text-white mb-8" data-i18n="demo_title">
+            Developer Experience First
           </h2>
           <ul class="space-y-6">
             <li class="flex items-start">
@@ -501,8 +530,10 @@
               </div>
               <div class="ml-4">
                 <h4 class="text-lg font-medium text-white" data-i18n="demo_enums_title">
+                  Type-Safe Enums
                 </h4>
                 <p class="text-zinc-400 mt-1" data-i18n="demo_enums_desc">
+                  No more magic strings. Use strongly typed enums for formats and countries.
                 </p>
               </div>
             </li>
@@ -512,8 +543,10 @@
               </div>
               <div class="ml-4">
                 <h4 class="text-lg font-medium text-white" data-i18n="demo_di_title">
+                  Dependency Injection Ready
                 </h4>
                 <p class="text-zinc-400 mt-1" data-i18n="demo_di_desc">
+                  Seamlessly integrates with ASP.NET Core DI containers.
                 </p>
               </div>
             </li>
@@ -523,8 +556,10 @@
               </div>
               <div class="ml-4">
                 <h4 class="text-lg font-medium text-white" data-i18n="demo_tests_title">
+                  Test Friendly
                 </h4>
                 <p class="text-zinc-400 mt-1" data-i18n="demo_tests_desc">
+                  Interfaces included for easy mocking in your unit tests.
                 </p>
               </div>
             </li>
@@ -534,24 +569,24 @@
     </div>
   </section>
 
-  <!-- Supported Validations Section -->
   <section id="validations" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 scroll-animate">
-        <h2 class="text-3xl font-bold text-white" data-i18n="validations_title"></h2>
+        <h2 class="text-3xl font-bold text-white" data-i18n="validations_title">Supported Validations</h2>
         <p class="mt-4 text-zinc-400" data-i18n="validations_subtitle">
+          Comprehensive support for regional and international financial formats.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- IBAN Validation -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate">
           <div
             class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_iban_title"></h3>
+          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_iban_title">IBAN Validation</h3>
           <p class="text-zinc-400 mb-6" data-i18n="val_iban_desc">
+            Validates structure, length, and checksums for International Bank Account Numbers.
           </p>
           <ul class="space-y-3">
             <li class="flex items-center text-sm text-zinc-300">
@@ -568,67 +603,67 @@
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 mr-2"></i>
-              <span data-i18n="val_iban_iso"></span>
+              <span data-i18n="val_iban_iso">All ISO 13616 countries</span>
             </li>
           </ul>
         </div>
 
-        <!-- Payment References -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate"
           style="transition-delay: 0.1s">
           <div
             class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="receipt" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_payment_title"></h3>
+          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_payment_title">Payment References</h3>
           <p class="text-zinc-400 mb-6" data-i18n="val_payment_desc">
+            Generate and validate structured remittance information for invoices.
           </p>
           <ul class="space-y-3">
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_ogm"></span>
+              <span data-i18n="val_payment_ogm">Belgian OGM / VCS</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_gen"></span>
+              <span data-i18n="val_payment_gen">Formatted Generator</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_rf"></span>
+              <span data-i18n="val_payment_rf">ISO 11649 RF Creditor</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_iso"></span>
+              <span data-i18n="val_payment_iso">Cross-border support</span>
             </li>
           </ul>
         </div>
 
-        <!-- Business Numbers -->
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate"
           style="transition-delay: 0.2s">
           <div
             class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-600 to-red-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_business_title"></h3>
+          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_business_title">Business Numbers</h3>
           <p class="text-zinc-400 mb-6" data-i18n="val_business_desc">
+            Ensure VAT and Enterprise numbers follow correct check-digit logic.
           </p>
           <ul class="space-y-3">
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_vat"></span>
+              <span data-i18n="val_business_vat">VAT Validation</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_ent"></span>
+              <span data-i18n="val_business_ent">Enterprise Numbers</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_format"></span>
+              <span data-i18n="val_business_format">Correct Formatting</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_checksum"></span>
+              <span data-i18n="val_business_checksum">Mod97 Checksums</span>
             </li>
           </ul>
         </div>
@@ -636,72 +671,75 @@
     </div>
   </section>
 
-  <!-- Roadmap Section -->
   <section id="roadmap" class="py-20 bg-zinc-900/30 border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-white text-center mb-16 scroll-animate" data-i18n="roadmap_title"></h2>
+      <h2 class="text-3xl font-bold text-white text-center mb-16 scroll-animate" data-i18n="roadmap_title">Roadmap</h2>
 
       <div class="relative border-l border-zinc-800 ml-4 md:ml-0 space-y-12">
-        <!-- Now -->
         <div class="relative pl-8 md:pl-0 scroll-animate" style="transition-delay: 0.1s">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]">
           </div>
           <div class="md:grid md:grid-cols-5 md:gap-8">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-cyan-400 font-bold" data-i18n="roadmap_now"></span>
+              <span class="text-cyan-400 font-bold" data-i18n="roadmap_now">NOW</span>
             </div>
             <div class="md:col-span-4">
               <h3 class="text-xl font-semibold text-white" data-i18n="roadmap_now_title">
+                Core Validation Logic
               </h3>
               <p class="text-zinc-400 mt-2" data-i18n="roadmap_now_desc">
+                Complete support for Belgian, Dutch, and Luxembourg IBANs, Payment References (OGM), and Business Numbers.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Q1 2026 -->
         <div class="relative pl-8 md:pl-0 scroll-animate" style="transition-delay: 0.2s">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
           <div class="md:grid md:grid-cols-5 md:gap-8">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-500 font-medium" data-i18n="roadmap_q1_2026"></span>
+              <span class="text-zinc-500 font-medium" data-i18n="roadmap_q1_2026">Q1 2026</span>
             </div>
             <div class="md:col-span-4">
               <h3 class="text-lg font-medium text-zinc-300" data-i18n="roadmap_q1_2026_title">
+                France & Germany Expansion
               </h3>
               <p class="text-zinc-500 mt-1" data-i18n="roadmap_q1_2026_desc">
+                Adding specialized validation rules for French SIRET/SIREN numbers and German Steuer-IdNr.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Q3 2026 -->
         <div class="relative pl-8 md:pl-0 scroll-animate" style="transition-delay: 0.3s">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
           <div class="md:grid md:grid-cols-5 md:gap-8">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-500 font-medium" data-i18n="roadmap_q3_2026"></span>
+              <span class="text-zinc-500 font-medium" data-i18n="roadmap_q3_2026">Q3 2026</span>
             </div>
             <div class="md:col-span-4">
               <h3 class="text-lg font-medium text-zinc-300" data-i18n="roadmap_q3_2026_title">
+                UK & Nordic Support
               </h3>
               <p class="text-zinc-500 mt-1" data-i18n="roadmap_q3_2026_desc">
+                Implementing UK Sort Codes, NHS numbers, and Nordic KID reference validation.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Q1 2027 -->
         <div class="relative pl-8 md:pl-0 scroll-animate" style="transition-delay: 0.4s">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
           <div class="md:grid md:grid-cols-5 md:gap-8">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-500 font-medium" data-i18n="roadmap_q1_2027"></span>
+              <span class="text-zinc-500 font-medium" data-i18n="roadmap_q1_2027">Q1 2027</span>
             </div>
             <div class="md:col-span-4">
               <h3 class="text-lg font-medium text-zinc-300" data-i18n="roadmap_q1_2027_title">
+                Global SWIFT/BIC Validation
               </h3>
               <p class="text-zinc-500 mt-1" data-i18n="roadmap_q1_2027_desc">
+                Full offline validation for worldwide SWIFT/BIC codes and address format verification.
               </p>
             </div>
           </div>
@@ -710,17 +748,16 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-12 border-t border-white/5 bg-zinc-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="text-center md:text-left">
-        <p class="text-zinc-500 text-sm" data-i18n="footer_copyright"></p>
+        <p class="text-zinc-500 text-sm" data-i18n="footer_copyright">© 2025 Finova. Open Source under MIT License.</p>
       </div>
       <div class="text-center md:text-right">
         <p class="text-zinc-500 text-sm flex items-center justify-center md:justify-end gap-1">
-          <span data-i18n="footer_made_with"></span>
+          <span data-i18n="footer_made_with">Made with</span>
           <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-red-500"></i>
-          <span data-i18n="footer_community"></span>
+          <span data-i18n="footer_community">for the .NET Community</span>
         </p>
       </div>
     </div>
@@ -747,14 +784,14 @@
         });
       }, observerOptions);
 
-      // Observe all elements with scroll animation classes
-      document
-        .querySelectorAll(
-          ".scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale"
-        )
-        .forEach((el) => {
-          observer.observe(el);
-        });
+      // FIXED: Used Array.from() and .forEach() to prevent syntax errors on older browsers
+      const animateElements = document.querySelectorAll(
+        ".scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale"
+      );
+      
+      Array.from(animateElements).forEach((el) => {
+        observer.observe(el);
+      });
 
       // Re-initialize Lucide icons
       lucide.createIcons();

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1383)"><rect width="1000" height="1000" fill="#0c0e17"></rect><g transform="matrix(1.5625,0,0,1.5625,100,100)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512"><svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#09090b"></rect>
+  
+  <defs>
+    <linearGradient id="finova_gradient" x1="100" y1="100" x2="412" y2="412" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06b6d4"></stop> <stop offset="1" stop-color="#3b82f6"></stop> </linearGradient>
+  <clipPath id="SvgjsClipPath1383"><rect width="1000" height="1000" x="0" y="0" rx="500" ry="500"></rect></clipPath></defs>
+
+  <rect x="130" y="110" width="80" height="292" rx="40" fill="url(#finova_gradient)"></rect>
+  
+  <rect x="130" y="110" width="252" height="80" rx="40" fill="url(#finova_gradient)"></rect>
+  
+  <rect x="130" y="230" width="180" height="80" rx="40" fill="url(#finova_gradient)"></rect>
+  
+  <rect x="0" y="0" width="512" height="512" rx="128" stroke="white" stroke-opacity="0.1" stroke-width="8"></rect>
+</svg></svg></g></g></svg>
