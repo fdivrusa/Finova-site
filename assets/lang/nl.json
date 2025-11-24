@@ -59,5 +59,8 @@
   "roadmap_q1_2027_desc": "Generatie en validatie van pain.001 en pain.008 berichten.",
   "footer_copyright": "© 2025 Finova. MIT Licentie.",
   "footer_made_with": "Gemaakt met",
-  "footer_community": "voor de Europese financiële gemeenschap."
+  "footer_community": "voor de Europese financiële gemeenschap.",
+  "contrib_title": "Mist u een Land of Formaat?",
+  "contrib_desc": "Finova is open source en community-gedreven. Als u een specifieke validatieregel nodig heeft of een bug hebt gevonden, laat het ons weten!",
+  "contrib_btn": "Open een Issue"
 }

@@ -59,5 +59,8 @@
   "roadmap_q1_2027_desc": "Generation and validation of pain.001 and pain.008 messages.",
   "footer_copyright": "© 2025 Finova. MIT License.",
   "footer_made_with": "Made with",
-  "footer_community": "for the European financial community."
+  "footer_community": "for the European financial community.",
+  "contrib_title": "Missing a Country or Format?",
+  "contrib_desc": "  Finova is open source and community driven. If you need a specific validation rule or found a bug, let us know!",
+  "contrib_btn": "Open an Issue"
 }
