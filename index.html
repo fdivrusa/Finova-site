@@ -663,7 +663,7 @@
                 </li>
                 <li class="text-sm text-zinc-400 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  Comprehensive testing and CI/CD
+                  CI/CD & Unit Test Suite
                 </li>
               </ul>
             </div>
@@ -686,24 +686,20 @@
             <div class="md:col-span-4 glass-card p-4 rounded-xl border-l-2 border-cyan-500/50 bg-cyan-900/5">
               <h3 class="text-lg font-semibold text-white flex items-center gap-2">
                 <i data-lucide="loader-2" class="w-5 h-5 text-cyan-400 animate-spin"></i>
-                European Banking Expansion
+                European Banking & Cards
               </h3>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-300 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5"></span>
-                  <strong>New:</strong> IBAN validation for FR, DE, UK
+                  <strong>New:</strong> IBAN validation for FR, DE, UK, IT, ES
                 </li>
-                <li class="text-sm text-zinc-400 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  BIC/SWIFT format validation
+                <li class="text-sm text-zinc-300 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5"></span>
+                  <strong>New:</strong> Structural BIC Validation (ISO 9362)
                 </li>
-                <li class="text-sm text-zinc-400 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  Local bank code to BIC logic
-                </li>
-                <li class="text-sm text-zinc-400 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  Legacy account conversion algorithms
+                <li class="text-sm text-zinc-300 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5"></span>
+                  <strong>New:</strong> Payment Cards (Luhn Algorithm & Brand Detection)
                 </li>
               </ul>
             </div>
@@ -715,29 +711,29 @@
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
               <span class="text-zinc-300 font-bold block">v1.2.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q2 2026</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q3 2026</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="calculator" class="w-5 h-5 text-zinc-400"></i>
-                Tax & Business
+                <i data-lucide="briefcase" class="w-5 h-5 text-zinc-400"></i>
+                Corporate Identity
               </h3>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  VAT format & checksums (EU-27)
+                  EU-27 VAT Number Checksums (Offline VIES syntax)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Offline VIES syntax compliance
+                  French SIRET / SIREN (Luhn based)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Enterprise number validation (KBO/BCE)
+                  Belgian Enterprise Numbers (KBO/BCE Mod97)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  National ID checksums
+                  Spanish NIF/CIF algorithms
                 </li>
               </ul>
             </div>
@@ -749,29 +745,25 @@
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
               <span class="text-zinc-300 font-bold block">v1.3.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q3 2026</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q4 2026</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="file-code" class="w-5 h-5 text-zinc-400"></i>
-                SEPA File Standards
+                <i data-lucide="qr-code" class="w-5 h-5 text-zinc-400"></i>
+                Modern Payment Strings
               </h3>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  pain.001 (Credit Transfer) Schema Validation
+                  EPC QR Code Payload Builder (SEPA Credit Transfer)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  pain.008 (Direct Debit) Structure Checks
+                  Swiss QR Bill String Parser
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Offline XML Builder (String Generation)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Batch file structure verification
+                  Payment Link Generator (SEPA Request-to-Pay)
                 </li>
               </ul>
             </div>
@@ -783,29 +775,29 @@
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
               <span class="text-zinc-300 font-bold block">v1.4.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q4 2026</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q1 2027</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="network" class="w-5 h-5 text-zinc-400"></i>
-                PEPPOL Compliance
+                <i data-lucide="globe" class="w-5 h-5 text-zinc-400"></i>
+                Global Routing
               </h3>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Participant ID syntax validation
+                  USA ABA Routing Number (Checksums)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Document type identifier parsing
+                  Canadian Transit Numbers
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  PEPPOL BIS 3.0 XSD Verification
+                  Nordic Ref Generators (NO KID / FI Viitenumero)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Offline Scheme ID checks
+                  Australian BSB Number Validation
                 </li>
               </ul>
             </div>
@@ -816,30 +808,26 @@
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-300 font-bold block">v2.0.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q1 2027</span>
+              <span class="text-zinc-300 font-bold block">v1.5.0</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q2 2027</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="file-text" class="w-5 h-5 text-zinc-400"></i>
-                E-Invoicing Suite
+                <i data-lucide="shield-alert" class="w-5 h-5 text-zinc-400"></i>
+                Security Utilities
               </h3>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  UBL 2.1 invoice XML generation
+                  <code>Scrub()</code> helpers for PCI-DSS safe logging (Masking)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  EN 16931 structure compliance
+                  Virtual IBAN heuristics (Fintech detection)
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Offline Credit & Debit note creation
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  CII (Cross Industry Invoice) support
+                  Financial Input Sanitization
                 </li>
               </ul>
             </div>
@@ -847,40 +835,10 @@
         </div>
 
         <div class="relative pl-8 md:pl-0 group scroll-animate-right">
-          <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
-          <div class="md:grid md:grid-cols-5 md:gap-6">
-            <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-300 font-bold block">v2.1.0+</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q2+ 2027</span>
-            </div>
-            <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
-              <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="globe" class="w-5 h-5 text-zinc-400"></i>
-                Country Expansion
-              </h3>
-              <ul class="mt-3 space-y-2">
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Local E-Invoicing Formats (XRechnung, Factur-X)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Expanded EU-27 Validation Rules
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Global ID Formats (US, AU, SG)
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative pl-8 md:pl-0 group scroll-animate-left">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-purple-400 font-bold block">Future</span>
+              <span class="text-purple-400 font-bold block">Horizon</span>
               <span class="text-xs text-zinc-500 uppercase tracking-widest">Undetermined</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-purple-500/20">
@@ -889,20 +847,20 @@
                 Horizon Features
               </h3>
               <p class="text-sm text-zinc-400 mt-2 mb-3">
-                 We are constantly exploring new possibilities based on community feedback.
+                 Exploring advanced offline capabilities based on community feedback.
               </p>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  AI-assisted anomaly detection?
+                  Offline E-Invoicing (UBL/CII) String Builders?
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  WASM (WebAssembly) support?
+                  WASM (WebAssembly) support for Blazor?
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Your requested features!
+                  AI-assisted anomaly detection (Pattern based)?
                 </li>
               </ul>
             </div>
