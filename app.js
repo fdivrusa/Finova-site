@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const defaultLang = "en";
-  const supportedLangs = ["en", "fr", "nl"];
+  const supportedLangs = ["en", "fr", "nl", "de"];
   const langKey = "finova_lang";
 
   // 1. Detect Language
