@@ -7,7 +7,7 @@
   
   <title>Finova - The Offline Financial Validation Toolkit for .NET</title>
   <meta name="title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
-  <meta name="description" content="Validate IBANs, Payment References, and Business Numbers locally in .NET. Zero dependencies. Zero latency. 100% Privacy. Supports Belgian, Dutch, Luxembourg, German, French and UK formats." />
+  <meta name="description" content="Validate IBANs, Payment References, and Business Numbers locally in .NET. Zero dependencies. Zero latency. 100% Privacy. Supports Global formats." />
   <meta name="keywords" content=".NET, C#, IBAN validation, OGM, Payment Reference, Finova, Offline Validation, Nuget, Privacy, Belgium, Netherlands, Luxembourg, Germany, France, UK" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Finova" />
@@ -68,7 +68,14 @@
           },
           animation: {
             "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            "fade-in-up": "fadeInUp 0.5s ease-out forwards",
           },
+          keyframes: {
+            fadeInUp: {
+              "0%": { opacity: "0", transform: "translateY(10px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" },
+            }
+          }
         },
       },
     };
@@ -196,6 +203,10 @@
 
     .token.method {
       color: #61afef;
+    }
+    
+    .token.property {
+      color: #e06c75;
     }
 
     /* Scroll Animations */
@@ -435,13 +446,13 @@
           style="transition-delay: 0.3s">
           <div
             class="w-12 h-12 rounded-lg bg-zinc-800/50 flex items-center justify-center mb-6 border border-zinc-700 group-hover:border-cyan-500/30 group-hover:bg-cyan-900/10">
-            <i data-lucide="map-pin" class="w-6 h-6 text-cyan-400"></i>
+            <i data-lucide="globe" class="w-6 h-6 text-cyan-400"></i>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_benelux_title">
-            Benelux Specialized
+          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_modular_title">
+            Modular Architecture
           </h3>
-          <p class="text-zinc-400 leading-relaxed" data-i18n="feature_benelux_desc">
-            Specialized support for Belgium, Netherlands, and Luxembourg formats including specific banking standards (VCS, OGM).
+          <p class="text-zinc-400 leading-relaxed" data-i18n="feature_modular_desc">
+            Built for the world. Modular architecture allows for easy expansion into any country's financial standards.
           </p>
         </div>
 
@@ -463,26 +474,87 @@
     </div>
   </section>
 
-  <section class="py-20 bg-zinc-900/30 border-y border-white/5">
+  <section class="py-20 bg-zinc-900/30 border-y border-white/5" x-data="{ activeTab: 'validation' }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div
-          class="rounded-xl overflow-hidden bg-[#1e1e1e] border border-zinc-700 shadow-2xl shadow-black/50 scroll-animate-left">
-          <div class="flex items-center px-4 py-3 bg-[#252526] border-b border-zinc-700">
-            <div class="flex space-x-2">
-              <div class="w-3 h-3 rounded-full bg-red-500"></div>
-              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <span class="ml-4 text-xs text-zinc-400 font-mono">Program.cs</span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        
+        <div class="scroll-animate-left">
+          <div class="flex items-center space-x-2 mb-4">
+             <button @click="activeTab = 'validation'" 
+                :class="{ 'bg-zinc-800 text-white border-cyan-500/50': activeTab === 'validation', 'bg-zinc-900/50 text-zinc-500 border-transparent hover:text-zinc-300': activeTab !== 'validation' }"
+                class="px-4 py-2 text-xs font-medium rounded-t-lg border border-b-0 transition-colors">
+                Simple Validation
+             </button>
+             <button @click="activeTab = 'parsing'" 
+                :class="{ 'bg-zinc-800 text-white border-cyan-500/50': activeTab === 'parsing', 'bg-zinc-900/50 text-zinc-500 border-transparent hover:text-zinc-300': activeTab !== 'parsing' }"
+                class="px-4 py-2 text-xs font-medium rounded-t-lg border border-b-0 transition-colors">
+                Detailed Parsing
+             </button>
+             <button @click="activeTab = 'generation'" 
+                :class="{ 'bg-zinc-800 text-white border-cyan-500/50': activeTab === 'generation', 'bg-zinc-900/50 text-zinc-500 border-transparent hover:text-zinc-300': activeTab !== 'generation' }"
+                class="px-4 py-2 text-xs font-medium rounded-t-lg border border-b-0 transition-colors">
+                Generation
+             </button>
           </div>
-          <div class="p-6 overflow-x-auto">
-            <pre class="font-mono text-sm leading-relaxed"><code><span class="token comment">// 100% Offline Validation</span>
-<span class="token type">bool</span> isValid = <span class="token type">BelgianBankAccountValidator</span>.<span class="token method">ValidateBelgianIban</span>(<span class="token string">"BE68539007547034"</span>);
 
-<span class="token comment">// Generate Payment Reference</span>
-<span class="token keyword">var</span> ref = generator.<span class="token method">Generate</span>(<span class="token string">"123456"</span>, <span class="token type">PaymentReferenceFormat</span>.Domestic);
-<span class="token comment">// Output: +++000/0012/34569+++</span></code></pre>
+          <div class="rounded-xl rounded-tl-none overflow-hidden bg-[#1e1e1e] border border-zinc-700 shadow-2xl shadow-black/50 relative min-h-[300px]">
+            <div class="flex items-center px-4 py-3 bg-[#252526] border-b border-zinc-700 justify-between">
+               <div class="flex space-x-2">
+                 <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                 <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                 <div class="w-3 h-3 rounded-full bg-green-500"></div>
+               </div>
+               <span class="text-xs text-zinc-500 font-mono" x-text="activeTab === 'validation' ? 'ValidationService.cs' : (activeTab === 'parsing' ? 'FranceIbanParser.cs' : 'PaymentService.cs')"></span>
+            </div>
+            
+            <div class="p-6 overflow-x-auto">
+              <div x-show="activeTab === 'validation'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+                <pre class="font-mono text-sm leading-relaxed"><code><span class="token keyword">using</span> <span class="token type">Finova.Netherlands.Validators</span>;
+
+<span class="token comment">// 1. Static Usage (Ideal for Console Apps / Scripts)</span>
+<span class="token type">string</span> iban = <span class="token string">"NL91ABNA0417164300"</span>;
+
+<span class="token keyword">if</span> (<span class="token type">NetherlandsIbanValidator</span>.<span class="token method">ValidateDutchIban</span>(iban)) 
+{
+    <span class="token type">Console</span>.<span class="token method">WriteLine</span>(<span class="token string">"IBAN is valid!"</span>);
+}
+
+<span class="token comment">// No dependency injection container required.</span>
+<span class="token comment">// Just call the static method directly.</span></code></pre>
+              </div>
+
+              <div x-show="activeTab === 'parsing'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;">
+                 <pre class="font-mono text-sm leading-relaxed"><code><span class="token keyword">using</span> <span class="token type">Finova.France.Services</span>;
+
+<span class="token comment">// 2. DI Usage (Ideal for ASP.NET Core)</span>
+<span class="token comment">// Inject IIbanParser into your service</span>
+
+<span class="token keyword">public class</span> <span class="token type">PaymentService</span>(<span class="token type">IIbanParser</span> parser) {
+  <span class="token keyword">public void</span> <span class="token method">Process</span>(<span class="token type">string</span> iban) {
+    <span class="token keyword">var</span> details = parser.<span class="token method">ParseIban</span>(iban);
+
+    <span class="token keyword">if</span> (details != <span class="token keyword">null</span>)
+    {
+        <span class="token type">Console</span>.<span class="token method">WriteLine</span>(details.<span class="token property">BankCode</span>);
+        <span class="token type">Console</span>.<span class="token method">WriteLine</span>(details.<span class="token property">BranchCode</span>);
+    }
+  }
+}</code></pre>
+              </div>
+
+              <div x-show="activeTab === 'generation'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;">
+                 <pre class="font-mono text-sm leading-relaxed"><code><span class="token keyword">using</span> <span class="token type">Finova.Belgium.Services</span>;
+
+<span class="token keyword">var</span> generator = <span class="token keyword">new</span> <span class="token type">BelgiumPaymentReferenceService</span>();
+
+<span class="token comment">// Generate OGM (VCS) Structured Reference</span>
+<span class="token type">string</span> rawRef = <span class="token string">"123456"</span>;
+<span class="token keyword">var</span> ogm = generator.<span class="token method">Generate</span>(rawRef, <span class="token type">PaymentReferenceFormat</span>.LocalBelgian);
+
+<span class="token comment">// Output: +++000/0012/34569+++</span>
+<span class="token comment">// (Automatically pads to 10 digits and adds mod97 checksum)</span></code></pre>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -490,6 +562,9 @@
           <h2 class="text-3xl font-bold text-white mb-8" data-i18n="demo_title">
             Developer Experience First
           </h2>
+          <p class="text-zinc-400 mb-8 leading-relaxed">
+            Built for every .NET scenario. Seamlessly integrates with <strong>ASP.NET Core Dependency Injection</strong> for enterprise apps, while exposing zero-setup <strong>Static Methods</strong> for console tools and scripts.
+          </p>
           <ul class="space-y-6">
             <li class="flex items-start">
               <div class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center mt-1">
@@ -500,7 +575,20 @@
                   Type-Safe Enums
                 </h4>
                 <p class="text-zinc-400 mt-1" data-i18n="demo_enums_desc">
-                  No more magic strings. Use strongly typed enums for formats and countries.
+                  No more magic strings. Use strongly typed enums like <code>PaymentReferenceFormat.IsoRf</code> or <code>PaymentReferenceFormat.LocalBelgian</code>.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center mt-1">
+                <i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-medium text-white" data-i18n="demo_hybrid_title">
+                  Hybrid Architecture (DI + Static)
+                </h4>
+                <p class="text-zinc-400 mt-1" data-i18n="demo_hybrid_desc">
+                   Fully supports <strong>Dependency Injection</strong> (interfaces included) for testability, OR use <code>static</code> helpers for instant, <code>new</code>-free usage in simple apps.
                 </p>
               </div>
             </li>
@@ -510,23 +598,10 @@
               </div>
               <div class="ml-4">
                 <h4 class="text-lg font-medium text-white" data-i18n="demo_di_title">
-                  Dependency Injection Ready
+                  Deep Parsing Support
                 </h4>
                 <p class="text-zinc-400 mt-1" data-i18n="demo_di_desc">
-                  Seamlessly integrates with ASP.NET Core DI containers.
-                </p>
-              </div>
-            </li>
-            <li class="flex items-start">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center mt-1">
-                <i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="text-lg font-medium text-white" data-i18n="demo_tests_title">
-                  Test Friendly
-                </h4>
-                <p class="text-zinc-400 mt-1" data-i18n="demo_tests_desc">
-                  Interfaces included for easy mocking in your unit tests.
+                  Don't just validate "true/false". Extract Branch Codes, Account Numbers, and National Keys from IBANs using our Parsers.
                 </p>
               </div>
             </li>
@@ -541,7 +616,7 @@
       <div class="text-center mb-16 scroll-animate">
         <h2 class="text-3xl font-bold text-white" data-i18n="validations_title">Supported Validations</h2>
         <p class="mt-4 text-zinc-400" data-i18n="validations_subtitle">
-          Comprehensive support for regional and international financial formats.
+          Comprehensive support for global financial formats and standards.
         </p>
       </div>
 
@@ -558,15 +633,11 @@
           <ul class="space-y-3">
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 mr-2"></i>
-              🇧🇪 Belgium, 🇳🇱 Netherlands, 🇱🇺 Luxembourg
+              <span data-i18n="val_iban_sepa">Complete SEPA Coverage (incl. UK, Switzerland, Scandinavia)</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 mr-2"></i>
-              🇫🇷 France, 🇩🇪 Germany, 🇬🇧 UK
-            </li>
-            <li class="flex items-center text-sm text-zinc-300">
-              <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 mr-2"></i>
-              <span data-i18n="val_iban_iso">All ISO 13616 countries</span>
+              <span data-i18n="val_iban_iso">Global ISO 13616 Compliance (80+ countries)</span>
             </li>
           </ul>
         </div>
@@ -579,24 +650,20 @@
           </div>
           <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_payment_title">Payment References</h3>
           <p class="text-zinc-400 mb-6" data-i18n="val_payment_desc">
-            Generate and validate structured remittance information for invoices.
+            Generate and validate structured remittance information for international invoices.
           </p>
           <ul class="space-y-3">
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_ogm">Belgian OGM / VCS</span>
+              <span data-i18n="val_payment_rf">ISO 11649 Creditor References (RF)</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_gen">Formatted Generator</span>
+              <span data-i18n="val_payment_domestic">Domestic Standards (Belgian OGM, Nordic KIDs)</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_rf">ISO 11649 RF Creditor</span>
-            </li>
-            <li class="flex items-center text-sm text-zinc-300">
-              <i data-lucide="check-circle" class="w-4 h-4 text-purple-400 mr-2"></i>
-              <span data-i18n="val_payment_iso">Cross-border support</span>
+              <span data-i18n="val_payment_gen">QR-Bill & Remittance String Builders</span>
             </li>
           </ul>
         </div>
@@ -607,26 +674,22 @@
             class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-600 to-red-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
           </div>
-          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_business_title">Business Numbers</h3>
+          <h3 class="text-2xl font-semibold text-white mb-4" data-i18n="val_business_title">Corporate Identity</h3>
           <p class="text-zinc-400 mb-6" data-i18n="val_business_desc">
-            Ensure VAT and Enterprise numbers follow correct check-digit logic.
+            Ensure Tax IDs and Enterprise numbers follow correct national check-digit logic.
           </p>
           <ul class="space-y-3">
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_vat">VAT Validation</span>
+              <span data-i18n="val_business_vat">EU VAT Syntax Validation</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_ent">Enterprise Numbers</span>
+              <span data-i18n="val_business_ent">National Systems (SIRET, KVK, BCE)</span>
             </li>
             <li class="flex items-center text-sm text-zinc-300">
               <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_format">Correct Formatting</span>
-            </li>
-            <li class="flex items-center text-sm text-zinc-300">
-              <i data-lucide="check-circle" class="w-4 h-4 text-orange-400 mr-2"></i>
-              <span data-i18n="val_business_checksum">Mod97 Checksums</span>
+              <span data-i18n="val_business_checksum">Mod97, Luhn, & Weighted Checksums</span>
             </li>
           </ul>
         </div>
@@ -892,16 +955,44 @@
   </section>
 
   <footer class="py-12 border-t border-white/5 bg-zinc-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-center md:text-left">
-        <p class="text-zinc-500 text-sm" data-i18n="footer_copyright">© 2025 Finova. Open Source under MIT License.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+        <div class="text-center md:text-left">
+          <span class="text-xl font-bold text-white tracking-tight block mb-2">Finova</span>
+          <p class="text-zinc-500 text-sm" data-i18n="footer_copyright">© 2025 Finova. Open Source under MIT License.</p>
+        </div>
+  
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/fdivrusa/Finova" target="_blank" class="text-zinc-400 hover:text-white transition-colors">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/florian-di-vrusa/" target="_blank" class="text-zinc-400 hover:text-[#0077b5] transition-colors">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.nuget.org/packages/Finova" target="_blank" class="text-zinc-400 hover:text-cyan-400 transition-colors">
+            <i data-lucide="package" class="w-5 h-5"></i>
+          </a>
+        </div>
       </div>
-      <div class="text-center md:text-right">
-        <p class="text-zinc-500 text-sm flex items-center justify-center md:justify-end gap-1">
-          <span data-i18n="footer_made_with">Made with</span>
-          <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-red-500"></i>
-          <span data-i18n="footer_community">for the .NET Community</span>
-        </p>
+  
+      <div class="border-t border-white/5 my-8"></div>
+  
+      <div class="grid md:grid-cols-2 gap-8 text-sm text-zinc-600">
+        <div class="text-center md:text-left">
+          <p class="mb-2 font-semibold text-zinc-500">Disclaimer</p>
+          <p class="leading-relaxed text-xs">
+            This package is provided "as is", without warranty of any kind, express or implied. 
+            The author is not responsible for any errors, financial losses, or damages arising from the use of this software. 
+            Users are responsible for verifying validation results against official banking records where necessary.
+          </p>
+        </div>
+        <div class="text-center md:text-right flex flex-col justify-end">
+           <p class="flex items-center justify-center md:justify-end gap-1">
+            <span data-i18n="footer_made_with">Made with</span>
+            <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-red-500"></i>
+            <span data-i18n="footer_community">for the .NET Community</span>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
