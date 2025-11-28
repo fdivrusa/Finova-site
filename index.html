@@ -7,8 +7,8 @@
   <meta name="google-site-verification" content="aKU9ZOnEWkWZrZ9s42ZK2iVcF2HJqUuWpTM10qI4ETk" />
   <title>Finova - The Offline Financial Validation Toolkit for .NET</title>
   <meta name="title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
-  <meta name="description" content="Validate IBANs, Payment References, and Business Numbers locally in .NET. Zero dependencies. Zero latency. 100% Privacy. Supports Global formats." />
-  <meta name="keywords" content=".NET, C#, IBAN validation, OGM, Payment Reference, Finova, Offline Validation, Nuget, Privacy, Belgium, Netherlands, Luxembourg, Germany, France, UK" />
+  <meta name="description" content="Validate IBANs, Payment References, and Business Numbers locally in .NET. High performance. Zero latency. 100% Privacy. Supports Global formats." />
+  <meta name="keywords" content=".NET, C#, IBAN validation, OGM, Payment Reference, Finova, Offline Validation, Nuget, Privacy, Belgium, Netherlands, Luxembourg, Germany, France, UK, Italy, Spain" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Finova" />
   <link rel="canonical" href="https://finovapackage.netlify.app/" />
@@ -16,13 +16,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://finovapackage.netlify.app/" />
   <meta property="og:title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
-  <meta property="og:description" content="Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency. 100% Privacy." />
+  <meta property="og:description" content="Validate IBANs, Payment References, and Business Numbers locally. High performance. Zero latency. 100% Privacy." />
   <meta property="og:image" content="https://finovapackage.netlify.app/assets/images/social-preview.jpg" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://finovapackage.netlify.app/" />
   <meta property="twitter:title" content="Finova - The Offline Financial Validation Toolkit for .NET" />
-  <meta property="twitter:description" content="Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency. 100% Privacy." />
+  <meta property="twitter:description" content="Validate IBANs, Payment References, and Business Numbers locally. High performance. Zero latency. 100% Privacy." />
   <meta property="twitter:image" content="https://finovapackage.netlify.app/assets/images/social-preview.jpg" />
 
   <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -44,7 +44,7 @@
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Validate IBANs, Payment References, and Business Numbers locally. Zero dependencies. Zero latency."
+    "description": "Validate IBANs, Payment References, and Business Numbers locally. High performance. Zero latency."
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -352,6 +352,12 @@
         <span
           class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-zinc-300 border border-zinc-700"><span
             class="fi fi-gb" style="width: 16px; height: 12px; display: inline-block;"></span> UK</span>
+         <span
+          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-zinc-300 border border-zinc-700"><span
+            class="fi fi-it" style="width: 16px; height: 12px; display: inline-block;"></span> IT</span>
+         <span
+          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-zinc-300 border border-zinc-700"><span
+            class="fi fi-es" style="width: 16px; height: 12px; display: inline-block;"></span> ES</span>
         <span
           class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-900/30 text-cyan-400 border border-cyan-700/50 shadow-[0_0_10px_rgba(6,182,212,0.2)]">
           <i data-lucide="wifi-off" class="w-3 h-3 mr-1"></i> <span data-i18n="hero_offline_badge">100% Offline</span>
@@ -367,7 +373,7 @@
       <p class="mt-4 max-w-2xl mx-auto text-xl text-zinc-400 mb-10">
         <span data-i18n="hero_subtitle_1">Validate IBANs, Payment References, and Business Numbers locally.</span>
         <br />
-        <span class="text-zinc-200" data-i18n="hero_subtitle_2">Zero dependencies. Zero latency. 100% Privacy.</span>
+        <span class="text-zinc-200" data-i18n="hero_subtitle_2">High Performance. Zero latency. 100% Privacy.</span>
       </p>
 
       <div class="max-w-3xl mx-auto mb-8">
@@ -395,6 +401,30 @@
           </div>
         </button>
       </div>
+
+      <div class="mt-8 relative max-w-4xl mx-auto z-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <div class="glass-card rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            <div class="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <div class="ml-4 text-xs text-zinc-500 font-mono">Program.cs</div>
+            </div>
+            <div class="p-6 text-left font-mono text-sm sm:text-base overflow-x-auto">
+                <div class="text-zinc-300">
+                    <span class="text-purple-400">using</span> Finova.Core.Accounts;<br>
+                    <span class="text-purple-400">using</span> Finova.Italy.Services;<br><br>
+                    <span class="text-zinc-500">// 1. Validate instantly</span><br>
+                    <span class="text-purple-400">bool</span> isValid = <span class="text-blue-400">IbanHelper</span>.IsValid(<span class="text-green-400">"IT60X054..."</span>);<br><br>
+                    <span class="text-zinc-500">// 2. Parse details</span><br>
+                    <span class="text-purple-400">var</span> details = <span class="text-blue-400">ItalyIbanParser</span>.ParseIban(<span class="text-green-400">"IT60X054..."</span>);<br>
+                    Console.WriteLine(<span class="text-yellow-400">$"Bank: </span>{details.Abi}<span class="text-yellow-400">, Branch: </span>{details.Cab}<span class="text-yellow-400">"</span>); 
+                </div>
+            </div>
+        </div>
+        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 rounded-xl blur-xl -z-10"></div>
+      </div>
+
     </div>
   </section>
 
@@ -404,13 +434,13 @@
         <div class="glass-card p-8 rounded-2xl transition-all duration-300 group scroll-animate">
           <div
             class="w-12 h-12 rounded-lg bg-zinc-800/50 flex items-center justify-center mb-6 border border-zinc-700 group-hover:border-cyan-500/30 group-hover:bg-cyan-900/10">
-            <i data-lucide="package-x" class="w-6 h-6 text-cyan-400"></i>
+            <i data-lucide="blocks" class="w-6 h-6 text-cyan-400"></i>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_zero_dep_title">
-            Zero Dependencies
+          <h3 class="text-xl font-semibold text-white mb-3" data-i18n="feature_extensible_title">
+            Extensible Design
           </h3>
-          <p class="text-zinc-400 leading-relaxed" data-i18n="feature_zero_dep_desc">
-            Extremely lightweight. No external API calls, no bloat. Just pure, optimized C# logic for maximum performance.
+          <p class="text-zinc-400 leading-relaxed" data-i18n="feature_extensible_desc">
+            Start with the lightweight core. Add our FluentValidation extensions or other modules as your enterprise needs grow.
           </p>
         </div>
 
@@ -718,15 +748,11 @@
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-400 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  Belgian payment references (OGM/VCS)
+                  IBAN Validation (BE, NL, LU, FR, DE, UK)
                 </li>
                 <li class="text-sm text-zinc-400 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  ISO 11649 international references
-                </li>
-                <li class="text-sm text-zinc-400 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5"></span>
-                  CI/CD & Unit Test Suite
+                  Belgian OGM & ISO 11649 References
                 </li>
               </ul>
             </div>
@@ -734,10 +760,44 @@
         </div>
 
         <div class="relative pl-8 md:pl-0 group scroll-animate-left">
+          <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+          <div class="md:grid md:grid-cols-5 md:gap-6">
+            <div class="md:col-span-1 md:text-right">
+              <span class="text-green-400 font-bold block">v1.1.0</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Released</span>
+            </div>
+            <div class="md:col-span-4 glass-card p-4 rounded-xl border-l-2 border-green-500/30">
+              <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+                Core Expansion
+              </h3>
+              <ul class="mt-3 space-y-2">
+                <li class="text-sm text-zinc-300 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5"></span>
+                  <strong>New:</strong> IBAN Parsing for Italy (IT) & Spain (ES)
+                </li>
+                <li class="text-sm text-zinc-300 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5"></span>
+                  <strong>New:</strong> Structural BIC/SWIFT Validation (ISO 9362)
+                </li>
+                <li class="text-sm text-zinc-300 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5"></span>
+                  <strong>New:</strong> Payment Cards (Luhn Algorithm & Brand Detection)
+                </li>
+                 <li class="text-sm text-zinc-300 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5"></span>
+                  <strong>New:</strong> RF Creditor Reference Validator (ISO 11649)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 md:pl-0 group scroll-animate-right">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.8)] animate-pulse"></div>
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-cyan-400 font-bold block">v1.1.0</span>
+              <span class="text-cyan-400 font-bold block">v1.2.0</span>
               <span class="text-xs text-cyan-400 font-bold uppercase tracking-widest flex md:justify-end items-center gap-1">
                 <span class="relative flex h-2 w-2 mr-1">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -749,20 +809,53 @@
             <div class="md:col-span-4 glass-card p-4 rounded-xl border-l-2 border-cyan-500/50 bg-cyan-900/5">
               <h3 class="text-lg font-semibold text-white flex items-center gap-2">
                 <i data-lucide="loader-2" class="w-5 h-5 text-cyan-400 animate-spin"></i>
-                European Banking & Cards
+                European Unification
               </h3>
+              <p class="text-sm text-zinc-400 mt-2 mb-3">
+                 A major architectural update to simplify the developer experience.
+              </p>
               <ul class="mt-3 space-y-2">
                 <li class="text-sm text-zinc-300 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5"></span>
-                  <strong>New:</strong> IBAN validation for FR, DE, UK, IT, ES
+                  <strong>The "Finova.Europe" Wrapper:</strong> A unified package for all SEPA countries.
                 </li>
                 <li class="text-sm text-zinc-300 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5"></span>
-                  <strong>New:</strong> Structural BIC Validation (ISO 9362)
+                  Smart Routing: Auto-detect country rules via <code>EuropeValidator</code>
                 </li>
                 <li class="text-sm text-zinc-300 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5"></span>
-                  <strong>New:</strong> Payment Cards (Luhn Algorithm & Brand Detection)
+                  FluentValidation Integration (Extensions package)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative pl-8 md:pl-0 group scroll-animate-left">
+          <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
+          <div class="md:grid md:grid-cols-5 md:gap-6">
+            <div class="md:col-span-1 md:text-right">
+              <span class="text-zinc-300 font-bold block">v1.3.0</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Future</span>
+            </div>
+            <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
+              <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
+                <i data-lucide="building-2" class="w-5 h-5 text-zinc-400"></i>
+                Corporate Identity
+              </h3>
+              <ul class="mt-3 space-y-2">
+                <li class="text-sm text-zinc-500 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
+                  EU VAT Checksums (VIES offline syntax)
+                </li>
+                <li class="text-sm text-zinc-500 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
+                  France SIRET/SIREN & Belgium KBO/BCE
+                </li>
+                <li class="text-sm text-zinc-500 flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
+                  Netherlands KVK & Spain NIF/CIF
                 </li>
               </ul>
             </div>
@@ -773,42 +866,8 @@
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-300 font-bold block">v1.2.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q3 2026</span>
-            </div>
-            <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
-              <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="briefcase" class="w-5 h-5 text-zinc-400"></i>
-                Corporate Identity
-              </h3>
-              <ul class="mt-3 space-y-2">
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  EU-27 VAT Number Checksums (Offline VIES syntax)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  French SIRET / SIREN (Luhn based)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Belgian Enterprise Numbers (KBO/BCE Mod97)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Spanish NIF/CIF algorithms
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative pl-8 md:pl-0 group scroll-animate-left">
-          <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
-          <div class="md:grid md:grid-cols-5 md:gap-6">
-            <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-300 font-bold block">v1.3.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q4 2026</span>
+              <span class="text-zinc-300 font-bold block">v1.4.0</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Future</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
@@ -824,21 +883,17 @@
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
                   Swiss QR Bill String Parser
                 </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Payment Link Generator (SEPA Request-to-Pay)
-                </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="relative pl-8 md:pl-0 group scroll-animate-right">
+        <div class="relative pl-8 md:pl-0 group scroll-animate-left">
           <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
           <div class="md:grid md:grid-cols-5 md:gap-6">
             <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-300 font-bold block">v1.4.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q1 2027</span>
+              <span class="text-zinc-300 font-bold block">v1.5.0</span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Future</span>
             </div>
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
@@ -856,41 +911,7 @@
                 </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Nordic Ref Generators (NO KID / FI Viitenumero)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
                   Australian BSB Number Validation
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative pl-8 md:pl-0 group scroll-animate-left">
-          <div class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-zinc-700"></div>
-          <div class="md:grid md:grid-cols-5 md:gap-6">
-            <div class="md:col-span-1 md:text-right">
-              <span class="text-zinc-300 font-bold block">v1.5.0</span>
-              <span class="text-xs text-zinc-500 uppercase tracking-widest">Q2 2027</span>
-            </div>
-            <div class="md:col-span-4 glass-card p-4 rounded-xl border border-white/5">
-              <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
-                <i data-lucide="shield-alert" class="w-5 h-5 text-zinc-400"></i>
-                Security Utilities
-              </h3>
-              <ul class="mt-3 space-y-2">
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  <code>Scrub()</code> helpers for PCI-DSS safe logging (Masking)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Virtual IBAN heuristics (Fintech detection)
-                </li>
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Financial Input Sanitization
                 </li>
               </ul>
             </div>
@@ -907,16 +928,9 @@
             <div class="md:col-span-4 glass-card p-4 rounded-xl border border-purple-500/20">
               <h3 class="text-lg font-semibold text-zinc-200 flex items-center gap-2">
                 <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                Horizon Features
+                Future Exploration
               </h3>
-              <p class="text-sm text-zinc-400 mt-2 mb-3">
-                 Exploring advanced offline capabilities based on community feedback.
-              </p>
               <ul class="mt-3 space-y-2">
-                <li class="text-sm text-zinc-500 flex items-start gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
-                  Offline E-Invoicing (UBL/CII) String Builders?
-                </li>
                 <li class="text-sm text-zinc-500 flex items-start gap-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-zinc-700 mt-1.5"></span>
                   WASM (WebAssembly) support for Blazor?
