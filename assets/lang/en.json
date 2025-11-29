@@ -62,5 +62,40 @@
   "footer_community": "for the European financial community.",
   "contrib_title": "Missing a Country or Format?",
   "contrib_desc": "  Finova is open source and community driven. If you need a specific validation rule or found a bug, let us know!",
-  "contrib_btn": "Open an Issue"
+  "contrib_btn": "Open an Issue",
+
+  "packages_title": "The Finova Ecosystem",
+  "packages_main_desc": "The complete toolkit (Core + Europe).",
+  "packages_core_desc": "Primitives only. Zero dependencies.",
+  "packages_ext_desc": "FluentValidation & other adapters.",
+
+  "roadmap_v10_title": "Foundation",
+  "roadmap_v10_item1": "IBAN Validation (BE, NL, LU, FR, DE, UK)",
+  "roadmap_v10_item2": "Belgian OGM & ISO 11649 References",
+
+  "roadmap_v11_title": "Core Expansion",
+  "roadmap_v11_item1": "Italy (IT) & Spain (ES) IBAN Parsing",
+  "roadmap_v11_item2": "BIC/SWIFT Structural Validation",
+  "roadmap_v11_item3": "Payment Card Validation (Luhn/Brand)",
+  "roadmap_v11_item4": "RF Creditor References",
+
+  "roadmap_v12_title": "European Unification",
+  "roadmap_v12_desc": "Architectural update to simplify developer experience.",
+  "roadmap_v12_item1": "The \"Finova.Europe\" Wrapper Package",
+  "roadmap_v12_item2": "Smart Routing (Auto-detect Country)",
+  "roadmap_v12_item3": "FluentValidation Extensions Package",
+
+  "roadmap_v13_title": "Pan-European Logic",
+  "roadmap_v13_item1": "Extended IBAN (PT, IE, AT, SI...)",
+  "roadmap_v13_item2": "Corporate Identity: VAT Validation",
+  "roadmap_v13_item3": "Domestic References (Nordic KIDs, FI)",
+
+  "roadmap_v14_title": "Payment Strings & Global",
+  "roadmap_v14_item1": "EPC QR & Swiss QR Strings",
+  "roadmap_v14_item2": "Global Routing: USA (ABA) & Canada",
+
+  "status_released": "Released",
+  "status_inprogress": "In Progress",
+  "status_planned": "Planned",
+  "status_future": "Future"
 }
