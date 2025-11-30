@@ -62,5 +62,40 @@
   "footer_community": "für die europäische Finanz-Community.",
   "contrib_title": "Fehlt ein Land oder Format?",
   "contrib_desc": "Finova ist Open Source und Community-getrieben. Wenn Sie eine spezifische Validierungsregel benötigen oder einen Fehler gefunden haben, lassen Sie es uns wissen!",
-  "contrib_btn": "Issue öffnen"
+  "contrib_btn": "Issue öffnen",
+
+  "packages_title": "Das Finova-Ökosystem",
+  "packages_main_desc": "Das komplette Toolkit (Core + Europa).",
+  "packages_core_desc": "Nur Primitive. Keine Abhängigkeiten.",
+  "packages_ext_desc": "FluentValidation & andere Adapter.",
+
+  "roadmap_v10_title": "Fundament",
+  "roadmap_v10_item1": "IBAN-Validierung (BE, NL, LU, FR, DE, UK)",
+  "roadmap_v10_item2": "Belgische OGM & ISO 11649 Referenzen",
+
+  "roadmap_v11_title": "Kern-Erweiterung",
+  "roadmap_v11_item1": "IBAN-Parsing für Italien (IT) & Spanien (ES)",
+  "roadmap_v11_item2": "Strukturelle BIC/SWIFT-Validierung",
+  "roadmap_v11_item3": "Zahlungskartenvalidierung (Luhn/Marke)",
+  "roadmap_v11_item4": "RF-Gläubigerreferenzen",
+
+  "roadmap_v12_title": "Europäische Vereinheitlichung",
+  "roadmap_v12_desc": "Architektur-Update zur Vereinfachung der Entwicklererfahrung.",
+  "roadmap_v12_item1": "Das \"Finova.Europe\" Wrapper-Paket",
+  "roadmap_v12_item2": "Intelligentes Routing (Automatische Ländererkennung)",
+  "roadmap_v12_item3": "FluentValidation Erweiterungspaket",
+
+  "roadmap_v13_title": "Paneuropäische Logik",
+  "roadmap_v13_item1": "Erweiterte IBAN (PT, IE, AT, SI...)",
+  "roadmap_v13_item2": "Unternehmensidentität: USt-Validierung",
+  "roadmap_v13_item3": "Inländische Referenzen (Nordische KIDs, FI)",
+
+  "roadmap_v14_title": "Zahlungsstrings & Global",
+  "roadmap_v14_item1": "EPC QR & Schweizer QR-Strings",
+  "roadmap_v14_item2": "Globales Routing: USA (ABA) & Kanada",
+
+  "status_released": "Veröffentlicht",
+  "status_inprogress": "In Arbeit",
+  "status_planned": "Geplant",
+  "status_future": "Zukunft"
 }
